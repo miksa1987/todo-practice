@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import propTypes from 'prop-types'
 import useField from '../../hooks/useField'
 import Addform from './Addform'
+import todoHandler from '../../state/todos'
 
 const FormBase = styled.form`
   border-left: 1px solid #cccccc;
@@ -15,7 +15,7 @@ const FormContainer = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    props.addTodo(newTodo.value)
+    todoHandler.addItem(newTodo.value)
     setNewTodo('')
   }
 
@@ -24,10 +24,6 @@ const FormContainer = (props) => {
       <Addform newTodo={newTodo} />
     </FormBase>
   )
-}
-
-FormContainer.propTypes = {
-  addTodo: propTypes.func.isRequired
 }
 
 export default FormContainer

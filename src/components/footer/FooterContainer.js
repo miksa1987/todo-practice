@@ -17,7 +17,7 @@ const FooterContainer = (props) => {
   return (
     <Base>
       <ItemCounter count={props.todosLength} />
-      <FilterBar setFilter={props.setFilter} filter={props.filter} />
+      <FilterBar />
     </Base>
   )
 }
