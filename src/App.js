@@ -3,7 +3,7 @@ import AppBase from './components/general/AppBase'
 import FormContainer from './components/addform/FormContainer'
 import Todolist from './components/todos/Todolist'
 import FooterContainer from './components/footer/FooterContainer'
-import todosHandler from './state/todos'
+import itemsHandler from './state/items'
 import filterHandler from './state/filter'
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
 
   React.useEffect(() => {
     filterHandler.setDispatch(setFilter)
-    todosHandler.setDispatch(setTodos)
+    itemsHandler.setDispatch(setTodos)
   }, [])
   
   const activeTodosLength = todos.filter((todo) => todo.done === false).length

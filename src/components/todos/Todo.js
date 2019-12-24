@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Check from './Check'
 import Cross from './Cross'
-import todoHandler from '../../state/todos'
+import itemsHandler from '../../state/items'
 
 const Base = styled.div`
   display: grid;
@@ -15,11 +15,11 @@ const Base = styled.div`
 const Todo = (props) => {
   return (
     <Base id='todo-item'>
-      <button id='todo-toggle' onClick={() => todoHandler.toggleDone(props.todo.id)}>
+      <button id='todo-toggle' onClick={() => itemsHandler.toggleDone(props.todo.id)}>
         {props.todo.state === 'done' ? <Check id='todo-done' /> : <Cross id='todo-active' />}
       </button>
       <p>{props.todo.text}</p>
-      <button id='todo-remove' onClick={() => todoHandler.removeItem(props.todo.id)}>X</button>
+      <button id='todo-remove' onClick={() => itemsHandler.removeItem(props.todo.id)}>X</button>
     </Base>
   )
 }

@@ -1,6 +1,8 @@
 let dispatch = null
 let items = []
 
+export const possibleStates = [ 'all', 'active', 'done' ]
+
 const setDispatch = (func) => dispatch = func
 
 const addItem = (text) => {
@@ -15,7 +17,10 @@ const addItem = (text) => {
 
 const toggleDone = (id) => {
   const itemToToggle = items.find((item) => item.id === id)
-  const toggledItem = { ...itemToToggle, state: itemToToggle.state === 'active' ? 'done' : 'active' }
+  const stateIndex = possibleStates.indexOf(itemToToggle.state)
+  const nextStateIndex = stateIndex === possibleStates.length - 1 ? 1 : stateIndex + 1
+  const toggledItem = { ...itemToToggle, state: possibleStates[nextStateIndex] } 
+
   items = items.map((item) => item.id === id ? toggledItem : item)
   dispatch(items)
 }

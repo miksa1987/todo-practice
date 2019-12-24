@@ -1,4 +1,6 @@
-const possibleFilters = [ 'all', 'active', 'done' ]
+import { possibleStates } from './items'
+
+const possibleFilters = possibleStates
 let dispatch = null
 
 const setDispatch = (func) => dispatch = func
