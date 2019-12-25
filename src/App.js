@@ -10,8 +10,6 @@ const App = () => {
   const [ , setTodos ] = React.useState([])
   const [ , setFilter ] = React.useState('all')
 
-  const test = itemsHandler.getItems()
-
   React.useEffect(() => {
     filterHandler.setDispatch(setFilter)
     itemsHandler.setDispatch(setTodos)
