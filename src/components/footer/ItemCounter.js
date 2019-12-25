@@ -1,8 +1,10 @@
 import React from 'react'
+import itemsHandler from '../../state/items'
 
-const ItemCounter = (props) => {
+const ItemCounter = () => {
+  const itemsLength = itemsHandler.getItemsLength()
   return (
-    <div>{props.count} items left</div>
+    <div>{itemsLength} items left</div>
   )
 }
 

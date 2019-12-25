@@ -1,10 +1,13 @@
 import React from 'react'
 import Todo from './Todo'
+import filterHandler from '../../state/filter'
+import itemsHandler from '../../state/items'
 
 const Todolist = (props) => {
+  const todos = filterHandler.filterTodos(itemsHandler.getItems())
   return (
     <div>
-      {props.todos.map((todo, index) => 
+      {todos.map((todo, index) => 
         <Todo 
           key={index} 
           todo={todo}

@@ -13,10 +13,10 @@ const Base = styled.div`
   padding: 5px;
 `
 
-const FooterContainer = (props) => {
+const FooterContainer = () => {
   return (
     <Base>
-      <ItemCounter count={props.todosLength} />
+      <ItemCounter />
       <FilterBar />
     </Base>
   )

@@ -30,9 +30,14 @@ const removeItem = (id) => {
   dispatch(items)
 }
 
+const getItemsLength = () => items.length
+const getItems = () => items
+
 export default {
   setDispatch,
   addItem,
   toggleDone,
-  removeItem
+  removeItem,
+  getItemsLength,
+  getItems
 }
